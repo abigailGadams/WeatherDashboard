@@ -17,9 +17,9 @@ fetch("http://api.openweathermap.org/data/2.5/weather?q="+cityName+"&appid=4580d
 
         <h3>Seattle (March 9, 2021) <img src="http://openweathermap.org/img/w/${results.weather[0].icon}.png" alt=""></h3>
         <p class="temp">Temperature: ${results.main.temp}&deg; F</p>
-        <p class="humidity">Humidity: ${results.}</p>
-        <p class="windSpeed">Wind Speed: 4.7 MPH</p>
-        <p class="UV"> UV Index: 9.49 </p>
+        <p class="humidity">Humidity: ${results.main.humidity} % </p>
+        <p class="windSpeed">Wind Speed: ${results.wind.speed} MPH</p>
+        <p class="UV"> UV Index: ${results.main.humidity}</p>
         `
     })
     
