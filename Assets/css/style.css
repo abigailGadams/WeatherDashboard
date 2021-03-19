@@ -1,6 +1,47 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
 h1 {
-    background-color:blue;
-    color:white;
-    font-weight: 100;
+  background-color: blue;
+  color: white;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.cityNames {
+  margin-top: 15px;
+  background-color: lightgray;
+  padding: 2vh;
+}
+
+.search {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.card-title {
     text-align: center;
+}
+
+.jumbotron {
+  background-color: lightgray;
+  margin-top: 89px;
+  margin-bottom: 20px;
+}
+
+footer {
+  display: block;
+  background-color: lightgray;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-bottom-right-radius: 6px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 6px;
 }
