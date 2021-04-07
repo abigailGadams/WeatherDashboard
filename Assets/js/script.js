@@ -79,7 +79,7 @@ function displayDashboard(event) {
           var titleEl = document.createElement("h3");
           document.querySelector(".jumbotron").innerHTML = `
 
-            ${results.name} ~ ${moment(results.dt, "X").format("LLL")} 
+            ${results.name} ~ ${moment(results.dt, "X").format("LL")} 
             <img src="http://openweathermap.org/img/w/${
               response.current.weather[0].icon
             }.png" alt="">
@@ -89,7 +89,7 @@ function displayDashboard(event) {
           <p id="UV"> UV Index: ${response.current.uvi} </p>
           `;
 
-          console.log(displayDashboard);
+          fiveDayForecast(cityName);
         });
     });
 }
@@ -104,7 +104,33 @@ function fiveDayForecast(cityName) {
       return response.json();
     })
     .then(function (results) {
-      console.log(results);
+      document.querySelector(".card-deck").innerHTML = "";
+      for (let i = 0; i < results.list.length; i++) {
+        let forecast = results.list[i];
+        console.log(forecast);
+        if (forecast.dt_txt.includes("00:00:00")) {
+          document.querySelector(".card-deck").innerHTML += `
+          <div class="card">
+              <div class="card-body" id="monday">
+                <span class="card-title">${moment(forecast.dt, "X").format(
+                  "LL"
+                )}</span>
+                <img src="http://openweathermap.org/img/w/${
+                  forecast.weather[0].icon
+                }.png" alt="" />
+                <p class="card-text">Temp: ${forecast.main.temp} &deg; F</p>
+                <p class="card-text">
+                  <small class="text-muted">Humidity:${
+                    forecast.main.humidity
+                  }  %</small>
+                </p>
+              </div>
+            </div>
+
+
+              `;
+        }
+      }
       // document.getElementById("monday").innerHTML = `
       //       <h5 class="card-title">3/8/2021</h5>
       //       <img src="http://openweathermap.org/img/w/${results.list[1].icon}.png" alt="">
