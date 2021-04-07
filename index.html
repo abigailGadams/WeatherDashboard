@@ -18,96 +18,110 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Weather Dashboard</title>
   </head>
-  <body>
+  <body class="flex-row justify-space-between">
     <header class="dashboard">
       <h1>Weather Dashboard</h1>
+      <div class="today"></div>
     </header>
 
     <div class="row">
       <div class="col-sm-4">
         <h2>Search For A City:</h2>
-        <input type="search" /><button>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-search"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-            />
-          </svg>
-        </button>
+        <form id="search-city" class="card-body">
+          <label class="form-label" for="searchCityName">City Name: </label>
+          <input
+            name="cityName"
+            id="search-value"
+            type="search"
+            autofocus="true"
+            class="form-label"
+          />
+          <button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+              type="search"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              />
+            </svg>
+          </button>
+        </form>
 
         <ul class="cityNames">
-          <li class="list-group-item" id="5809844">Seattle</li>
-          <li class="list-group-item" id="4887398">Chicago</li>
-          <li class="list-group-item" id="4164138">Miami</li>
-          <li class="list-group-item" id="5128581">New York</li>
-          <li class="list-group-item" id="5368361">Los Angeles</li>
-          <li class="list-group-item" id="5419384">Denver</li>
-          <li class="list-group-item" id="4180439">Atlanta</li>
-          <li class="list-group-item" id="4684888">Dallas</li>
-          <li class="list-group-item" id="4720131">Portland</li>
-          <li class="list-group-item" id="4335045">New Orleans</li>
-          <li class="list-group-item" id="5391811">San Diego</li>
-          <li class="list-group-item" id="4644585">Nashville</li>
+          <a class="list-group-item" id="5809844">Seattle</a>
+          <a class="list-group-item" id="4887398">Chicago</a>
+          <a class="list-group-item" id="4164138">Miami</a>
+          <a class="list-group-item" id="5128581">New York</a>
+          <a class="list-group-item" id="5368361">Los Angeles</a>
+          <a class="list-group-item" id="5419384">Denver</a>
+          <a class="list-group-item" id="4180439">Atlanta</a>
+          <a class="list-group-item" id="4684888">Dallas</a>
+          <a class="list-group-item" id="4720131">Portland</a>
+          <a class="list-group-item" id="4335045">New Orleans</a>
+          <a class="list-group-item" id="5391811">San Diego</a>
+          <a class="list-group-item" id="4644585">Nashville</a>
         </ul>
       </div>
 
       <div class="col-sm-8">
-        <div class="jumbotron"></div>
-        <div class="card-deck">
-          <div class="card">
-            <div class="card-body" id = "monday">
-              <h5 class="card-title">3/8/2021</h5>
-              <img src="http://openweathermap.org/img/w/03n.png" alt="" />
-              <p class="card-text">Temp: 50 &deg; F</p>
-              <p class="card-text">
-                <small class="text-muted">Humidity 20 %</small>
-              </p>
+        <div class="row">
+          <div class="jumbotron"></div>
+          <div class="card-deck">
+            <div class="card">
+              <div class="card-body" id="monday">
+                <span class="card-title">3/8/2021</span>
+                <img src="http://openweathermap.org/img/w/03n.png" alt="" />
+                <p class="card-text">Temp: 50 &deg; F</p>
+                <p class="card-text">
+                  <small class="text-muted">Humidity 20 %</small>
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <div class="card-body" id="tuesday">
-              <h5 class="card-title">3/10/2021</h5>
-              <img src="http://openweathermap.org/img/w/03n.png" alt="" />
-              <p class="card-text">Temp: 50 &deg; F</p>
-              <p class="card-text">
-                <small class="text-muted">Humidity 20 %</small>
-              </p>
+            <div class="card">
+              <div class="card-body" id="tuesday">
+                <span class="card-title">3/10/2021</span>
+                <img src="http://openweathermap.org/img/w/03n.png" alt="" />
+                <p class="card-text">Temp: 50 &deg; F</p>
+                <p class="card-text">
+                  <small class="text-muted">Humidity 20 %</small>
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <div class="card-body" id="wednesday">
-              <h5 class="card-title">3/10/2021</h5>
-              <img src="http://openweathermap.org/img/w/03n.png" alt="" />
-              <p class="card-text">Temp: 50 &deg; F</p>
-              <p class="card-text">
-                <small class="text-muted">Humidity 20 %</small>
-              </p>
+            <div class="card">
+              <div class="card-body" id="wednesday">
+                <span class="card-title">3/10/2021</span>
+                <img src="http://openweathermap.org/img/w/03n.png" alt="" />
+                <p class="card-text">Temp: 50 &deg; F</p>
+                <p class="card-text">
+                  <small class="text-muted">Humidity 20 %</small>
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <div class="card-body" id="thursday">
-              <h5 class="card-title">3/11/2021</h5>
-              <img src="http://openweathermap.org/img/w/03n.png" alt="" />
-              <p class="card-text">Temp: 50 &deg; F</p>
-              <p class="card-text">
-                <small class="text-muted">Humidity 20 %</small>
-              </p>
+            <div class="card">
+              <div class="card-body" id="thursday">
+                <span class="card-title">3/11/2021</span>
+                <img src="http://openweathermap.org/img/w/03n.png" alt="" />
+                <p class="card-text">Temp: 50 &deg; F</p>
+                <p class="card-text">
+                  <small class="text-muted">Humidity 20 %</small>
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <div class="card-body" id="friday">
-              <h5 class="card-title">3/12/2021</h5>
-              <img src="http://openweathermap.org/img/w/03n.png" alt="" />
-              <p class="card-text">Temp: 50 &deg; F</p>
-              <p class="card-text">
-                <small class="text-muted">Humidity 20 %</small>
-              </p>
+            <div class="card">
+              <div class="card-body" id="friday">
+                <span class="card-title">3/12/2021</span>
+                <img src="http://openweathermap.org/img/w/03n.png" alt="" />
+                <p class="card-text">Temp: 50 &deg; F</p>
+                <p class="card-text">
+                  <small class="text-muted">Humidity 20 %</small>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -117,7 +131,11 @@
     <footer>
       <p class="copyright">&copy2021 Abigail Adams. All Rights Reserved</p>
     </footer>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+    ></script>
     <script src="./Assets/js/script.js"></script>
   </body>
 </html>

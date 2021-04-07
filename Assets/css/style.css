@@ -7,10 +7,20 @@
 }
 
 h1 {
-  background-color: blue;
+  
   color: white;
   text-align: center;
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+h2 {
+  margin-left:1rem;
+  margin-top: 1rem;
+}
+.dashboard {
+  background-color: blue;
+  text-shadow: 2px; 
+  border-bottom:2px solid black;
 }
 
 .cityNames {
@@ -25,7 +35,8 @@ h1 {
 }
 
 .card-title {
-    text-align: center;
+    /* text-align: center; */
+    justify-content: flex-end;
 }
 
 .jumbotron {
