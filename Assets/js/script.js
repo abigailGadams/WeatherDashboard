@@ -2,10 +2,10 @@ var cityName = document.getElementById("#search-value");
 var uvresults;
 var formEl = document.querySelector("#search-city");
 var DashboardEl = document.querySelector("#jumbotron");
-// var userFormEl = document.querySelector("#user-form");
 
 function displayDashboard(event) {
   event.preventDefault();
+  console.log(event);
   var cityName = document.getElementById("search-value").value;
 
   // cityList.push(cityName);
@@ -42,7 +42,7 @@ function displayDashboard(event) {
           <h1> Current Weather:
           <h5>
             ${results.name} ~ ${moment(results.dt, "X").format("LL")} 
-            <img src="http://openweathermap.org/img/w/${
+            <img src="https://openweathermap.org/img/w/${
               response.current.weather[0].icon
             }.png" alt=""></h5></h1>
           <p id="temp"> Temperature: ${response.current.temp}&deg; F </p>
@@ -58,7 +58,7 @@ function displayDashboard(event) {
 
 function fiveDayForecast(cityName) {
   fetch(
-    "http://api.openweathermap.org/data/2.5/forecast?q=" +
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
       cityName +
       "&appid=b646d9e9b51e8298cf0ce0dc06240afd&units=imperial"
   )
@@ -77,7 +77,7 @@ function fiveDayForecast(cityName) {
                 <span class="card-title">${moment(forecast.dt, "X").format(
                   "LL"
                 )}</span>
-                <img src="http://openweathermap.org/img/w/${
+                <img src="https://openweathermap.org/img/w/${
                   forecast.weather[0].icon
                 }.png" alt="" />
                 <p class="card-text">Temp: ${forecast.main.temp} &deg; F</p>
