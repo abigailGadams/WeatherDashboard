@@ -7,20 +7,21 @@
 }
 
 h1 {
-  
   color: white;
   text-align: center;
   font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: oblique;
 }
 
 h2 {
-  margin-left:1rem;
+  margin-left: 1rem;
   margin-top: 1rem;
 }
 .dashboard {
   background-color: blue;
-  text-shadow: 2px; 
-  border-bottom:2px solid black;
+  text-shadow: 2px;
+  border-bottom: 2px solid black;
+  padding-top: 1vh;
 }
 
 .cityNames {
@@ -32,22 +33,29 @@ h2 {
 .search {
   margin-bottom: 10px;
   padding: 10px;
-}
-
-.card-title {
-    /* text-align: center; */
-    justify-content: flex-end;
+  border: 2px solid black;
 }
 
 .jumbotron {
   background-color: lightgray;
   margin-top: 89px;
   margin-bottom: 20px;
+  max-width: 100%;
+  display: flexbox;
+  border: 2px solid black;
+}
+
+.card-title {
+  /* text-align: center; */
+  justify-content: unset;
+  display: flexbox;
+  font-family: "Courier New", Courier, monospace;
+  border: 2px solid black;
 }
 
 footer {
   display: block;
-  background-color: lightgray;
+  background-color: rgba(rgb(207, 207, 207, 0.7));
   position: fixed;
   left: 0;
   bottom: 0;
@@ -55,4 +63,9 @@ footer {
   border-bottom-right-radius: 6px;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 6px;
+}
+
+.copyright {
+  text-align: right;
+  margin: 1vw;
 }
