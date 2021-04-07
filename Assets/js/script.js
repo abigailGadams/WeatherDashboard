@@ -2,22 +2,21 @@ var cityName = document.getElementById("#search-value");
 var uvresults;
 var formEl = document.querySelector("#search-city");
 var DashboardEl = document.querySelector("#jumbotron");
-var cityList = JSON.parse(localStorage.getItem("cityList")) || [];
+// var userFormEl = document.querySelector("#user-form");
 
 function displayDashboard(event) {
   event.preventDefault();
   var cityName = document.getElementById("search-value").value;
 
-  cityList.push(cityName);
+  // cityList.push(cityName);
 
-  localStorage.setItem("cityList", JSON.stringify(cityList));
-  for (let i = 0; i < cityList.length; i++) {
-    JSON.parse(window.localStorage.getItem("cityList"));
-    // var cityNamesEl = document.querySelector(".cityNames");
-    // cityNamesEl.textContent = cityList[i].cityList;
-    // cityNamesEl.append(cityList);
-    // document.getElementById("demo").innerHTML = highScore["0:i"];
-  }
+  // for (let i = 0; i < cityList.length; i++) {
+  //   JSON.parse(window.localStorage.getItem("cityList"));
+  //   // var cityNamesEl = document.querySelector(".cityNames");
+  //   // cityNamesEl.textContent = cityList[i].cityList;
+  //   // cityNamesEl.append(cityList);
+  //   // document.getElementById("demo").innerHTML = highScore["0:i"];
+  // }
   // for loop then generate
   fetch(
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -96,6 +95,21 @@ function fiveDayForecast(cityName) {
       }
     });
 }
+
+var saveList = function () {
+  localStorage.setItem("cityList", JSON.stringify(cityList));
+  console.log("tasks saved");
+};
+
+var loadCityList = function () {
+  var savedList = JSON.parse(localStorage.getItem("cityList")) || [];
+  console.log("Saved tasks found!");
+  for (var i = 0; i < cityList.length; i++) {
+    // pass each task object into the `createTaskEl()` function
+    createTaskEl(savedList[i]);
+  }
+};
+
 formEl.addEventListener("submit", displayDashboard);
 
 fiveDayForecast();

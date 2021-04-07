@@ -50,7 +50,6 @@ h2 {
   justify-content: unset;
   display: flexbox;
   font-family: "Courier New", Courier, monospace;
-  border: 2px solid black;
 }
 
 footer {
@@ -68,4 +67,6 @@ footer {
 .copyright {
   text-align: right;
   margin: 1vw;
+  padding-top: 1vh;
+  overflow-y: hidden;
 }
